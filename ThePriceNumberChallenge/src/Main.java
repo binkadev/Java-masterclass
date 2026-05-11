@@ -2,14 +2,10 @@ public class Main {
     public static void main(String[] args) {
         int primeCount = 0;
 
-        for (int number = 2; number <= 1000; number++) {
+        for (int number = 2; primeCount < 3 && number <= 1000; number++) {
             if (isPrime(number)) {
                 System.out.println(number);
                 primeCount++;
-
-                if (primeCount == 3) {
-                    break;
-                }
             }
         }
     }
