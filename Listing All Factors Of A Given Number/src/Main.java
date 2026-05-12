@@ -37,3 +37,20 @@
 //
 //NOTE: Do not add a main method to the solution code.
 
+public class FactorPrinter {
+    public static void printFactors (int number){
+        if (number < 1){
+            System.out.println("Invalid Value");
+            return;
+        }
+
+
+        for (int i = 1; i <= number ; i++){
+            if ( number % i == 0 ){  // cốt lõi bài này ( i là ước của number và ta cần kiểm tra tất cả từ 1 đến number)
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+// Muốn tìm tất cả ước số của number, hãy thử chia number cho từng số từ 1 đến number; số nào chia dư 0 thì in ra.
