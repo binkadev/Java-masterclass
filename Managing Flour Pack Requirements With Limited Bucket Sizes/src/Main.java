@@ -1,15 +1,48 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+// Managing Flour Pack Requirements With Limited Bucket Sizes
+//Write a method named canPack with three parameters of type int named bigCount, smallCount, and goal.
+//
+//The parameter bigCount represents the count of big flour bags (5 kilos each).
+//
+//The parameter smallCount represents the count of small flour bags (1 kilo each).
+//
+//The parameter goal represents the goal amount of kilos of flour needed to assemble a package.
+//
+//Therefore, the sum of the kilos of bigCount and smallCount must be at least equal to the value of goal. The method should return true if it is possible to make a package with goal kilos of flour.
+//
+//If the sum is greater than goal, ensure that only full bags are used towards the goal amount. For example, if goal = 9, bigCount = 2, and smallCount = 0, the method should return false since each big bag is 5 kilos and cannot be divided. However, if goal = 9, bigCount = 1, and smallCount = 5, the method should return true because of 1 full bigCount bag and 4 full smallCount bags equal goal, and it's okay if there are additional bags left over.
+//
+//If any of the parameters are negative, return false.
+//
+//
+//
+//EXAMPLE INPUT/OUTPUT:
+//
+//canPack (1, 0, 4); should return false since bigCount is 1 (big bag of 5 kilos) and goal is 4 kilos.
+//
+//canPack (1, 0, 5); should return true since bigCount is 1 (big bag of 5 kilos) and goal is 5 kilos.
+//
+//canPack (0, 5, 4); should return true since smallCount is 5 (small bags of 1 kilo) and goal is 4 kilos, and we have 1 bag left which is ok as mentioned above.
+//
+//canPack (2, 2, 11); should return true since bigCount is 2 (big bags 5 kilos each) and smallCount is 2 (small bags of 1 kilo), makes in total 12 kilos and goal is 11 kilos.
+//
+//canPack (-3, 2, 12); should return false since bigCount is negative.
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class FlourPacker {
+
+    public static boolean canPack(int bigCount, int smallCount, int goal) {
+        if (bigCount < 0 || smallCount < 0 || goal < 0) {
+            return false;
         }
+
+        int maxTuiLonDung = goal / 5;
+        int tuiLonDeDung = bigCount;
+
+        if (tuiLonDeDung > maxTuiLonDung){
+            tuiLonDeDung = maxTuiLonDung;
+        }
+
+        int tuiNhoDeDung = goal - tuiLonDeDung * 5;
+
+        return smallCount >= tuiNhoDeDung;
     }
 }
