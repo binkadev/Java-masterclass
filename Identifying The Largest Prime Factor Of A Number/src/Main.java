@@ -29,3 +29,18 @@
 //
 //NOTE: Do not add a main method to the solution code.
 
+public class LargestPrime {
+    public static int getLargestPrime (int number){
+        if (number <= 1){
+            return -1;
+        }
+        int largestPrime = -1;
+        for (int factor = 2; factor <= number; factor++) {
+            while (number % factor == 0) {
+                largestPrime = factor;
+                number = number / factor;
+            }
+        }
+        return largestPrime;
+    }
+}
