@@ -1,16 +1,27 @@
 public class Main {
+
     public static void main(String[] args) {
+
         int currentYear = 2022;
 
-        String usersDateOfBirth = "1999";
+        System.out.println(getInputFromConsole(currentYear));
 
-        int dateOfBirth = Integer.parseInt(usersDateOfBirth);
+        System.out.println(getInputFromScanner(currentYear));
+    }
 
-        System.out.println("AGE = " + (currentYear - dateOfBirth));
+    public static String getInputFromConsole(int currentYear) {
 
-        String usersAgeWithParticalYear =  " 22.5 ";
+        String name = System.console().readLine("Hi, What's your Name? ");
+        System.out.println("Hi " + name + ", Thanks for taking the course!");
 
-        double ageWithParticalYear = Double.parseDouble(usersAgeWithParticalYear);
-        System.out.println("AGE = " + (ageWithParticalYear));
+        String dateOfBirth = System.console().readLine("What year were you born? ");
+        int age = currentYear - Integer.parseInt(dateOfBirth);
+
+        return "So you are " + age + " years old";
+    }
+
+    public static String getInputFromScanner(int currentYear) {
+
+        return "";
     }
 }
