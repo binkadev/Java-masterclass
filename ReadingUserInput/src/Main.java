@@ -52,7 +52,7 @@ public class Main {
         } while (!validDob);
 
         return "So you are " + age + " years old";
-    }
+    }   
 
     public static int checkData(int currentYear, String dateOfBirth) {
         int dob = Integer.parseInt(dateOfBirth);
