@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int currentYear = 2022;
+        int currentYear = 2026;
 
         try {
             System.out.println(getInputFromConsole(currentYear));
